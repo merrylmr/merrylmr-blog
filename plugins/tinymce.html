@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>tinymce-vue 使用总结 | Merry 前端总结</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="merrylmr 前端">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.bbe4b17c.css" as="style"><link rel="preload" href="/blog/assets/js/app.7319010a.js" as="script"><link rel="preload" href="/blog/assets/js/2.53613de2.js" as="script"><link rel="preload" href="/blog/assets/js/37.645cbc2b.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.07c25309.js"><link rel="prefetch" href="/blog/assets/js/11.e50fe6f6.js"><link rel="prefetch" href="/blog/assets/js/12.a0c4610c.js"><link rel="prefetch" href="/blog/assets/js/13.b93b815d.js"><link rel="prefetch" href="/blog/assets/js/14.3ac60de8.js"><link rel="prefetch" href="/blog/assets/js/15.97240846.js"><link rel="prefetch" href="/blog/assets/js/16.54cb0224.js"><link rel="prefetch" href="/blog/assets/js/17.4adec6b3.js"><link rel="prefetch" href="/blog/assets/js/18.8423de59.js"><link rel="prefetch" href="/blog/assets/js/19.a24d8b10.js"><link rel="prefetch" href="/blog/assets/js/20.889e2680.js"><link rel="prefetch" href="/blog/assets/js/21.f5b823a1.js"><link rel="prefetch" href="/blog/assets/js/22.0908c706.js"><link rel="prefetch" href="/blog/assets/js/23.a8a42e95.js"><link rel="prefetch" href="/blog/assets/js/24.78b53375.js"><link rel="prefetch" href="/blog/assets/js/25.56504168.js"><link rel="prefetch" href="/blog/assets/js/26.e42e21cc.js"><link rel="prefetch" href="/blog/assets/js/27.da04f3d7.js"><link rel="prefetch" href="/blog/assets/js/28.dc1f10ab.js"><link rel="prefetch" href="/blog/assets/js/29.29825fc8.js"><link rel="prefetch" href="/blog/assets/js/3.cdf698d7.js"><link rel="prefetch" href="/blog/assets/js/30.3db7ee9a.js"><link rel="prefetch" href="/blog/assets/js/31.08805b0c.js"><link rel="prefetch" href="/blog/assets/js/32.15815cbf.js"><link rel="prefetch" href="/blog/assets/js/33.e226ab53.js"><link rel="prefetch" href="/blog/assets/js/34.638c599a.js"><link rel="prefetch" href="/blog/assets/js/35.d91c3384.js"><link rel="prefetch" href="/blog/assets/js/36.efd98a90.js"><link rel="prefetch" href="/blog/assets/js/38.8f851e35.js"><link rel="prefetch" href="/blog/assets/js/39.1a091e42.js"><link rel="prefetch" href="/blog/assets/js/4.41a26db9.js"><link rel="prefetch" href="/blog/assets/js/40.c2f1412e.js"><link rel="prefetch" href="/blog/assets/js/41.f14da1ee.js"><link rel="prefetch" href="/blog/assets/js/42.1db2aed8.js"><link rel="prefetch" href="/blog/assets/js/43.1479d117.js"><link rel="prefetch" href="/blog/assets/js/44.48c377a0.js"><link rel="prefetch" href="/blog/assets/js/45.01304b16.js"><link rel="prefetch" href="/blog/assets/js/46.a961c03d.js"><link rel="prefetch" href="/blog/assets/js/47.82c5bc6c.js"><link rel="prefetch" href="/blog/assets/js/48.2a90b2a5.js"><link rel="prefetch" href="/blog/assets/js/49.7e0d30c6.js"><link rel="prefetch" href="/blog/assets/js/5.67a396bf.js"><link rel="prefetch" href="/blog/assets/js/50.2155cd04.js"><link rel="prefetch" href="/blog/assets/js/51.1b4ca8f8.js"><link rel="prefetch" href="/blog/assets/js/6.60ce5f27.js"><link rel="prefetch" href="/blog/assets/js/7.bfa9c86b.js"><link rel="prefetch" href="/blog/assets/js/8.6a14cb95.js"><link rel="prefetch" href="/blog/assets/js/9.c82a29d5.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.bbe4b17c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Merry 前端总结</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/front/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/plugins/" class="nav-link router-link-active">
+  插件
+</a></li><li class="dropdown-item"><!----> <a href="/blog/webpack/" class="nav-link">
+  打包
+</a></li><li class="dropdown-item"><!----> <a href="/blog/http/" class="nav-link">
+  http
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/canvas/" class="nav-link">
+  canvas-svg
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/react/" class="nav-link">
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/blog/regExp/frequence.html" class="nav-link">
+  正则表达式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="服务端" class="dropdown-title"><span class="title">服务端</span> <span class="arrow down"></span></button> <button type="button" aria-label="服务端" class="mobile-dropdown-title"><span class="title">服务端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/server/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/blog/server/docker/" class="nav-link">
+  docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="总结" class="dropdown-title"><span class="title">总结</span> <span class="arrow down"></span></button> <button type="button" aria-label="总结" class="mobile-dropdown-title"><span class="title">总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/plugins/summary/product/" class="nav-link">
+  产品
+</a></li><li class="dropdown-item"><!----> <a href="/blog/plugins/summary/booknote/" class="nav-link">
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blog/plugins/summary/work/" class="nav-link">
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/merrylmr" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/front/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/plugins/" class="nav-link router-link-active">
+  插件
+</a></li><li class="dropdown-item"><!----> <a href="/blog/webpack/" class="nav-link">
+  打包
+</a></li><li class="dropdown-item"><!----> <a href="/blog/http/" class="nav-link">
+  http
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/canvas/" class="nav-link">
+  canvas-svg
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/react/" class="nav-link">
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/blog/regExp/frequence.html" class="nav-link">
+  正则表达式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="服务端" class="dropdown-title"><span class="title">服务端</span> <span class="arrow down"></span></button> <button type="button" aria-label="服务端" class="mobile-dropdown-title"><span class="title">服务端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/server/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/blog/server/docker/" class="nav-link">
+  docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="总结" class="dropdown-title"><span class="title">总结</span> <span class="arrow down"></span></button> <button type="button" aria-label="总结" class="mobile-dropdown-title"><span class="title">总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/plugins/summary/product/" class="nav-link">
+  产品
+</a></li><li class="dropdown-item"><!----> <a href="/blog/plugins/summary/booknote/" class="nav-link">
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blog/plugins/summary/work/" class="nav-link">
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/merrylmr" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/plugins/" aria-current="page" class="sidebar-link">插件列表</a></li><li><a href="/blog/plugins/calendar.html" class="sidebar-link">vue 手机端日历组件</a></li><li><a href="/blog/plugins/scrollAnchor.html" class="sidebar-link">scroll-anchor</a></li><li><a href="/blog/plugins/svg.html" class="sidebar-link">svg图片转svg标签</a></li><li><a href="/blog/plugins/crop.html" class="sidebar-link">图片裁剪组件</a></li><li><a href="/blog/plugins/baiduMp.html" class="sidebar-link">百度地图使用总结</a></li><li><a href="/blog/plugins/tinymce.html" aria-current="page" class="active sidebar-link">tinymce-vue 使用总结</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/plugins/tinymce.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/blog/plugins/tinymce.html#github地址" class="sidebar-link">github地址</a></li><li class="sidebar-sub-header"><a href="/blog/plugins/tinymce.html#基本使用" class="sidebar-link">基本使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/plugins/tinymce.html#安装tinymce-vue" class="sidebar-link">安装tinymce-vue</a></li><li class="sidebar-sub-header"><a href="/blog/plugins/tinymce.html#通过组件配置api-key的方式" class="sidebar-link">通过组件配置api-key的方式</a></li><li class="sidebar-sub-header"><a href="/blog/plugins/tinymce.html#通过包管理方式下载-tinymce" class="sidebar-link">通过包管理方式下载 tinymce</a></li><li class="sidebar-sub-header"><a href="/blog/plugins/tinymce.html#两种方式的比较" class="sidebar-link">两种方式的比较</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/plugins/tinymce.html#常见操作" class="sidebar-link">常见操作</a></li><li class="sidebar-sub-header"><a href="/blog/plugins/tinymce.html#项目demo" class="sidebar-link">项目demo</a></li><li class="sidebar-sub-header"><a href="/blog/plugins/tinymce.html#tinymce中文参考文档" class="sidebar-link">tinymce中文参考文档</a></li><li class="sidebar-sub-header"><a href="/blog/plugins/tinymce.html#参考文档" class="sidebar-link">参考文档</a></li></ul></li><li><a href="/blog/plugins/wow.html" class="sidebar-link">wow.js为啥滚动动画未执行</a></li><li><a href="/blog/plugins/fullpage.html" class="sidebar-link">vue-fullpage-ssr</a></li><li><a href="/blog/plugins/axios.html" class="sidebar-link">axios源码分析</a></li><li><a href="/blog/plugins/debug.html" class="sidebar-link">debug工具</a></li><li><a href="/blog/plugins/fabric.html" class="sidebar-link">fabric.js</a></li><li><a href="/blog/plugins/geoJSON.html" class="sidebar-link">地图数据调研</a></li><li><a href="/blog/plugins/imgPress.html" class="sidebar-link">图片压缩</a></li><li><a href="/blog/plugins/mescroll.html" class="sidebar-link">mescroll</a></li><li><a href="/blog/plugins/navmenu.html" class="sidebar-link">开发一个NavMenu导航菜单</a></li><li><a href="/blog/plugins/prerenderSpa.html" class="sidebar-link">prerender-spa-plugin</a></li><li><a href="/blog/plugins/tabWow.html" class="sidebar-link">解决切换tab ,wow动画不生效问题</a></li><li><a href="/blog/plugins/uniApp.html" class="sidebar-link">uni-app</a></li><li><a href="/blog/plugins/three.html" class="sidebar-link">Threejs</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="tinymce-vue-使用总结"><a href="#tinymce-vue-使用总结" class="header-anchor">#</a> tinymce-vue 使用总结</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>由于项目的需求，需要使用tinymce富文本编辑器；分享一下在项目中使用tinymce的一些注意点。
+当前代码采用的是Vue版本：2.x</p> <h2 id="github地址"><a href="#github地址" class="header-anchor">#</a> github地址</h2> <p>https://github.com/tinymce/tinymce-vue</p> <p><a href="https://www.tiny.cloud/docs/integrations/vue/#tinymce-script-src" target="_blank" rel="noopener noreferrer">官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="基本使用"><a href="#基本使用" class="header-anchor">#</a> 基本使用</h2> <h3 id="安装tinymce-vue"><a href="#安装tinymce-vue" class="header-anchor">#</a> 安装<code>tinymce-vue</code></h3> <p><code>vue2.x</code>安装 <code>tinymce-vue 3</code>的相关版本</p> <div class="language- extra-class"><pre class="language-text"><code>$ npm install --save &quot;@tinymce/tinymce-vue@^3&quot;
+</code></pre></div><p><code>vue3.x</code>安装<code>tinymce-vue 4</code>的相关版本:</p> <div class="language- extra-class"><pre class="language-text"><code>$ npm install --save &quot;@tinymce/tinymce-vue@^4&quot;
+</code></pre></div><h3 id="通过组件配置api-key的方式"><a href="#通过组件配置api-key的方式" class="header-anchor">#</a> 通过组件配置api-key的方式</h3> <p>Demo:</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;editor
+      :apiKey=&quot;apiKey&quot;
+      v-model=&quot;value&quot;
+      :init=&quot;init&quot;&gt;
+  &lt;/editor&gt;
+&lt;/template&gt;
+
+ &lt;script&gt;
+import Editor from '@tinymce/tinymce-vue'
+export default {
+  name: 'tinymce-comp',
+  data() {
+    return {
+      value: '',
+      init: {
+        language_url: '/tinymce/langs/zh_CN.js',// 语言包的路径
+        language: 'zh_CN',//语言
+        height: 300,//编辑器高度
+        branding: false,//是否禁用“Powered by TinyMCE”
+        menubar: true,//顶部菜单栏显示,
+        toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code codesample link help',
+        plugins: [
+          'advlist autolink lists link image charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table paste code help wordcount',
+          'codesample'
+        ],
+      },
+      apiKey: 'xxx'
+    }
+  },
+  components: {Editor},
+}
+&lt;/script&gt;
+</code></pre></div><h3 id="通过包管理方式下载-tinymce"><a href="#通过包管理方式下载-tinymce" class="header-anchor">#</a> 通过包管理方式下载 <a href="https://www.tiny.cloud/get-tiny/package-managers/" target="_blank" rel="noopener noreferrer">tinymce<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h3> <div class="language- extra-class"><pre class="language-text"><code>npm install tinymce -S
+</code></pre></div><p>Demo:</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+&lt;editor  v-model=&quot;value&quot; :init=&quot;init&quot;&gt;&lt;/editor&gt;
+&lt;/template&gt;
+&lt;script&gt;
+// 引入基本文件
+import tinymce from 'tinymce/tinymce'
+import Editor from '@tinymce/tinymce-vue'
+import 'tinymce/themes/silver'
+
+// 引入你需要的插件
+import 'tinymce/plugins/paste';
+import 'tinymce/plugins/link';
+
+export default{
+  data() {
+      return {
+        value:' ',
+        init: {
+       base_url: '/tinymce',
+       language_url: '/tinymce/langs/zh_CN.js',// 语言包的路径
+      language: 'zh_CN',//语言
+      skin_url: '/tinymce/skins/ui/oxide',// skin路径
+      height: 300,//编辑器高度
+      branding: false,//是否禁用“Powered by TinyMCE”
+      menubar: false,//顶部菜单栏显示,
+      toolbar:' undo redo | fontsizeselect bold italic underline strikethrough ',
+      plugins:'paste  link'
+        }
+      }
+   },
+  components:{Editor},
+  mounted() {
+    // Initialize the app
+      tinymce.init({ });
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p><strong>注意：</strong></p> <ol><li><p>需要将 node_modules下的<code>tinymce/skins</code>文件夹复制到项目的<code>public/tinymce</code>文件夹下，保持对应的目录结构。</p></li> <li><p>icon图标加载失败，如下图所示：
+<img src="https://upload-images.jianshu.io/upload_images/11899053-1a1936db73200ec5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p></li></ol> <p><strong>解决方案:</strong>
+查看安装的<code>tinymce</code>版本，若<code>&gt;5.0.8</code>，则需要将 node_modules下的<code>tinymce/icons</code>文件夹复制到项目的<code>public/tinymce</code>下，保持对应的目录结构;
+init中配置:</p> <div class="language- extra-class"><pre class="language-text"><code>init:{
+  base_url: '/tinymce'
+}
+</code></pre></div><h3 id="两种方式的比较"><a href="#两种方式的比较" class="header-anchor">#</a> 两种方式的比较</h3> <p>1.通过组件配置api-key的方式，这种需要你注册或者购买了tinymce服务,核心功能是不收费；
+2. 通过包下载的方式优点：加载更快，<code>api-key</code>方式访问的CDN非常缓慢。
+<img src="https://upload-images.jianshu.io/upload_images/11899053-2c3f446e59e14315.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p> <h2 id="常见操作"><a href="#常见操作" class="header-anchor">#</a> 常见操作</h2> <h4 id="字体列表修改"><a href="#字体列表修改" class="header-anchor">#</a> 字体列表修改</h4> <div class="language- extra-class"><pre class="language-text"><code>init:{
+ fontsize_formats: '11px 12px 14px 16px 18px 24px 36px 48px 50px 56px 60px 64px',
+
+}
+</code></pre></div><h4 id="自定义工具栏-注册一个新的工具栏按钮"><a href="#自定义工具栏-注册一个新的工具栏按钮" class="header-anchor">#</a> 自定义工具栏 (<a href="https://www.tiny.cloud/docs/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addbutton" target="_blank" rel="noopener noreferrer">注册一个新的工具栏按钮<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h4> <p>)
+在init数据里面</p> <div class="language- extra-class"><pre class="language-text"><code> init:{
+ setup:(editor)=&gt;{
+  editor.ui.registry.addButton('customBtn',{
+             tooltip: '自定义工具栏按钮',
+              text: 自定义'',
+              onAction: () =&gt; {
+              window.alert('新的工具栏按钮')
+              }
+     })
+  }
+}
+</code></pre></div><p>同时需要在<code>toolbar</code>配置项中添加<code>customBtn</code>;</p> <h4 id="粘贴图片-使用远程图片地址"><a href="#粘贴图片-使用远程图片地址" class="header-anchor">#</a> 粘贴图片(<a href="https://www.tiny.cloud/docs/configure/file-image-upload/#images_upload_handler" target="_blank" rel="noopener noreferrer">使用远程图片地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>)</h4> <p>1.引入粘贴插件</p> <div class="language- extra-class"><pre class="language-text"><code> import 'tinymce/plugins/paste'; // 张贴
+</code></pre></div><p>2.插件列表里面写入'paste'</p> <div class="language- extra-class"><pre class="language-text"><code>  plugins: 'paste',
+</code></pre></div><p>3.init里面添加下面语句</p> <div class="language- extra-class"><pre class="language-text"><code> init:{
+ paste_data_images: true,
+}
+</code></pre></div><p>4.粘贴的图片上传到服务器或者七牛配置如下</p> <div class="language- extra-class"><pre class="language-text"><code>init:{
+  images_upload_handler: function (blobInfo, success, failure) {
+    var xhr, formData;
+
+    xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+    xhr.open('POST', 'postAcceptor.php');
+
+    xhr.onload = function() {
+      var json;
+
+      if (xhr.status != 200) {
+        failure('HTTP Error: ' + xhr.status);
+        return;
+      }
+
+      json = JSON.parse(xhr.responseText);
+
+      if (!json || typeof json.location != 'string') {
+        failure('Invalid JSON: ' + xhr.responseText);
+        return;
+      }
+
+      success(json.location);
+    };
+
+    formData = new FormData();
+    formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+    xhr.send(formData);
+  }
+}
+</code></pre></div><h4 id="扩展插件"><a href="#扩展插件" class="header-anchor">#</a> 扩展插件</h4> <p>项目里面需要富文本可以设置字间距；但是tinymce并没有提供，所以自己去扩展一个letterspacing插件</p> <p><a href="http://tinymce.ax-z.cn/advanced/creating-a-plugin.php" target="_blank" rel="noopener noreferrer">如何制造一个插件<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+1.创建letterspacing文件夹，里面放入plugin.js
+<img src="https://upload-images.jianshu.io/upload_images/11899053-0c49abf42f673ead.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">
+2.引入插件
+<img src="https://upload-images.jianshu.io/upload_images/11899053-4cfd08c7b62c897e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p> <p>3.toolbar上加入创建的插件即可
+<img src="https://upload-images.jianshu.io/upload_images/11899053-3cc637c5e9a34d91.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p> <p><a href="http://tinymce.ax-z.cn/advanced/creating-a-plugin.php" target="_blank" rel="noopener noreferrer">http://tinymce.ax-z.cn/advanced/creating-a-plugin.php<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="项目demo"><a href="#项目demo" class="header-anchor">#</a> 项目demo</h2> <p>演示地址：http://admin-vuetify.bysir.top:1080/#/tinymce</p> <p><a href="https://github.com/merrylmr/vue-tinymce-demo" target="_blank" rel="noopener noreferrer">https://github.com/merrylmr/vue-tinymce-demo<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="tinymce中文参考文档"><a href="#tinymce中文参考文档" class="header-anchor">#</a> tinymce中文参考文档</h2> <p><a href="http://tinymce.ax-z.cn/" target="_blank" rel="noopener noreferrer">http://tinymce.ax-z.cn/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="参考文档"><a href="#参考文档" class="header-anchor">#</a> 参考文档</h2> <p><a href="https://liubing.me/vue-tinymce-5.html" target="_blank" rel="noopener noreferrer">https://liubing.me/vue-tinymce-5.html<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/plugins/baiduMp.html" class="prev">
+        百度地图使用总结
+      </a></span> <span class="next"><a href="/blog/plugins/wow.html">
+        wow.js为啥滚动动画未执行
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.7319010a.js" defer></script><script src="/blog/assets/js/2.53613de2.js" defer></script><script src="/blog/assets/js/37.645cbc2b.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue transition探索 | Merry 前端总结</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="merrylmr 前端">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.bbe4b17c.css" as="style"><link rel="preload" href="/blog/assets/js/app.7319010a.js" as="script"><link rel="preload" href="/blog/assets/js/2.53613de2.js" as="script"><link rel="preload" href="/blog/assets/js/8.6a14cb95.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.07c25309.js"><link rel="prefetch" href="/blog/assets/js/11.e50fe6f6.js"><link rel="prefetch" href="/blog/assets/js/12.a0c4610c.js"><link rel="prefetch" href="/blog/assets/js/13.b93b815d.js"><link rel="prefetch" href="/blog/assets/js/14.3ac60de8.js"><link rel="prefetch" href="/blog/assets/js/15.97240846.js"><link rel="prefetch" href="/blog/assets/js/16.54cb0224.js"><link rel="prefetch" href="/blog/assets/js/17.4adec6b3.js"><link rel="prefetch" href="/blog/assets/js/18.8423de59.js"><link rel="prefetch" href="/blog/assets/js/19.a24d8b10.js"><link rel="prefetch" href="/blog/assets/js/20.889e2680.js"><link rel="prefetch" href="/blog/assets/js/21.f5b823a1.js"><link rel="prefetch" href="/blog/assets/js/22.0908c706.js"><link rel="prefetch" href="/blog/assets/js/23.a8a42e95.js"><link rel="prefetch" href="/blog/assets/js/24.78b53375.js"><link rel="prefetch" href="/blog/assets/js/25.56504168.js"><link rel="prefetch" href="/blog/assets/js/26.e42e21cc.js"><link rel="prefetch" href="/blog/assets/js/27.da04f3d7.js"><link rel="prefetch" href="/blog/assets/js/28.dc1f10ab.js"><link rel="prefetch" href="/blog/assets/js/29.29825fc8.js"><link rel="prefetch" href="/blog/assets/js/3.cdf698d7.js"><link rel="prefetch" href="/blog/assets/js/30.3db7ee9a.js"><link rel="prefetch" href="/blog/assets/js/31.08805b0c.js"><link rel="prefetch" href="/blog/assets/js/32.15815cbf.js"><link rel="prefetch" href="/blog/assets/js/33.e226ab53.js"><link rel="prefetch" href="/blog/assets/js/34.638c599a.js"><link rel="prefetch" href="/blog/assets/js/35.d91c3384.js"><link rel="prefetch" href="/blog/assets/js/36.efd98a90.js"><link rel="prefetch" href="/blog/assets/js/37.645cbc2b.js"><link rel="prefetch" href="/blog/assets/js/38.8f851e35.js"><link rel="prefetch" href="/blog/assets/js/39.1a091e42.js"><link rel="prefetch" href="/blog/assets/js/4.41a26db9.js"><link rel="prefetch" href="/blog/assets/js/40.c2f1412e.js"><link rel="prefetch" href="/blog/assets/js/41.f14da1ee.js"><link rel="prefetch" href="/blog/assets/js/42.1db2aed8.js"><link rel="prefetch" href="/blog/assets/js/43.1479d117.js"><link rel="prefetch" href="/blog/assets/js/44.48c377a0.js"><link rel="prefetch" href="/blog/assets/js/45.01304b16.js"><link rel="prefetch" href="/blog/assets/js/46.a961c03d.js"><link rel="prefetch" href="/blog/assets/js/47.82c5bc6c.js"><link rel="prefetch" href="/blog/assets/js/48.2a90b2a5.js"><link rel="prefetch" href="/blog/assets/js/49.7e0d30c6.js"><link rel="prefetch" href="/blog/assets/js/5.67a396bf.js"><link rel="prefetch" href="/blog/assets/js/50.2155cd04.js"><link rel="prefetch" href="/blog/assets/js/51.1b4ca8f8.js"><link rel="prefetch" href="/blog/assets/js/6.60ce5f27.js"><link rel="prefetch" href="/blog/assets/js/7.bfa9c86b.js"><link rel="prefetch" href="/blog/assets/js/9.c82a29d5.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.bbe4b17c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Merry 前端总结</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/front/vue/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/plugins/" class="nav-link">
+  插件
+</a></li><li class="dropdown-item"><!----> <a href="/blog/webpack/" class="nav-link">
+  打包
+</a></li><li class="dropdown-item"><!----> <a href="/blog/http/" class="nav-link">
+  http
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/canvas/" class="nav-link">
+  canvas-svg
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/react/" class="nav-link">
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/blog/regExp/frequence.html" class="nav-link">
+  正则表达式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="服务端" class="dropdown-title"><span class="title">服务端</span> <span class="arrow down"></span></button> <button type="button" aria-label="服务端" class="mobile-dropdown-title"><span class="title">服务端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/server/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/blog/server/docker/" class="nav-link">
+  docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="总结" class="dropdown-title"><span class="title">总结</span> <span class="arrow down"></span></button> <button type="button" aria-label="总结" class="mobile-dropdown-title"><span class="title">总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/front/vue/summary/product/" class="nav-link">
+  产品
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/vue/summary/booknote/" class="nav-link">
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/vue/summary/work/" class="nav-link">
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/merrylmr" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/front/vue/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/plugins/" class="nav-link">
+  插件
+</a></li><li class="dropdown-item"><!----> <a href="/blog/webpack/" class="nav-link">
+  打包
+</a></li><li class="dropdown-item"><!----> <a href="/blog/http/" class="nav-link">
+  http
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/canvas/" class="nav-link">
+  canvas-svg
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/react/" class="nav-link">
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/blog/regExp/frequence.html" class="nav-link">
+  正则表达式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="服务端" class="dropdown-title"><span class="title">服务端</span> <span class="arrow down"></span></button> <button type="button" aria-label="服务端" class="mobile-dropdown-title"><span class="title">服务端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/server/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/blog/server/docker/" class="nav-link">
+  docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="总结" class="dropdown-title"><span class="title">总结</span> <span class="arrow down"></span></button> <button type="button" aria-label="总结" class="mobile-dropdown-title"><span class="title">总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/front/vue/summary/product/" class="nav-link">
+  产品
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/vue/summary/booknote/" class="nav-link">
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/vue/summary/work/" class="nav-link">
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/merrylmr" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/front/vue/" aria-current="page" class="active sidebar-link">Vue transition探索</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/front/vue/#vue的过渡实现步骤" class="sidebar-link">Vue的过渡实现步骤</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/front/vue/#过渡的类名" class="sidebar-link">过渡的类名</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/front/vue/#核心源码" class="sidebar-link">核心源码</a></li><li class="sidebar-sub-header"><a href="/blog/front/vue/#简单使用" class="sidebar-link">简单使用</a></li></ul></li><li><a href="/blog/front/vue/one.html" class="sidebar-link">vue-angle-picker</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue-transition探索"><a href="#vue-transition探索" class="header-anchor">#</a> Vue transition探索</h1> <p>使用过Vue的小伙伴都知道，Vue的内置组件<code>transition</code>,在以下情况，可以给单个元素/组件添加进入/离开的过渡</p> <ul><li>条件渲染（v-if）</li> <li>条件展示（v-show）</li> <li>动态组件</li> <li>组件根节点</li></ul> <p>这篇文章主要解密：条件展示（<code>v-show</code>）下，html+css+js实现一个简单的<code>transition</code></p> <p>先来看看vue官网文档:<a href="https://cn.vuejs.org/v2/guide/transitions.html#CSS-%E8%BF%87%E6%B8%A1" target="_blank" rel="noopener noreferrer">进入/离开&amp;列表过渡<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="vue的过渡实现步骤"><a href="#vue的过渡实现步骤" class="header-anchor">#</a> Vue的过渡实现步骤</h2> <blockquote><p>1.自动嗅探目标元素是否应用了 CSS 过渡或动画，如果是，在恰当的时机添加/删除 CSS 类名
+2.如果过渡组件提供了 JavaScript 钩子函数，这些钩子函数将在恰当的时机被调用
+3.如果没有找到 JavaScript 钩子并且也没有检测到 CSS 过渡/动画，DOM 操作 (插入/删除) 在下一帧中立即执行</p></blockquote> <p>所以真正执行动画的是<strong>我们写的css或者javascript钩子函数</strong>，而Vue的<code>transtion</code>只是帮我们很好地管理了这些css的添加/删除，以及钩子函数的执行时机。</p> <h3 id="过渡的类名"><a href="#过渡的类名" class="header-anchor">#</a> 过渡的类名</h3> <table><thead><tr><th>name</th> <th>定义</th> <th>添加时间</th> <th>移除时间</th></tr></thead> <tbody><tr><td>v-enter</td> <td>过渡的开始状态</td> <td>元素被插入之前</td> <td>元素被插入的下一帧移除</td></tr> <tr><td>v-enter-active</td> <td>过渡生效时候的状态</td> <td>被插入之前</td> <td><strong>过渡/动画完成</strong>后</td></tr> <tr><td>v-enter-to</td> <td>过渡结束状态</td> <td>元素被插入之后下一帧</td> <td><strong>过渡/动画完成</strong>后</td></tr> <tr><td>v-leave</td> <td>离开过渡的开始状态</td> <td>离开过渡触发时刻</td> <td>下一帧</td></tr> <tr><td>v-leave-active</td> <td>离开过渡生效的状态</td> <td>离开过渡触发</td> <td><strong>过渡/动画完成</strong>后</td></tr> <tr><td>v-leave-to</td> <td>离开过渡结束状态</td> <td>离开过渡触发下一帧</td> <td><strong>过渡/动画完成</strong>后</td></tr></tbody></table> <p>过渡/动画完成后移除class：怎么判断过渡/动画是否完成?可以监听对应的事件：</p> <ul><li>过渡完成：<code>transitionend</code></li> <li>动画完成：<code>animationend</code></li></ul> <p>了解了以上知识点，实现一个简单的transition就非常的简单了。
+查看<a href="https://merrylmr.github.io/vue-theory-analysis/" target="_blank" rel="noopener noreferrer">demo<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>效果：<a href="https://merrylmr.github.io/vue-theory-analysis/" target="_blank" rel="noopener noreferrer">https://merrylmr.github.io/vue-theory-analysis/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <img src="https://upload-images.jianshu.io/upload_images/11899053-3f59f003db21ee52.gif?imageMogr2/auto-orient/strip" alt="效果图"></p> <h2 id="核心源码"><a href="#核心源码" class="header-anchor">#</a> 核心源码</h2> <div class="language- extra-class"><pre class="language-text"><code>  class Transition {
+    constructor(el, name, show) {
+      this.el = el
+      this.show = show || false // el初始状态，显示or隐藏
+      this.x = this.autoCssTransition(name)
+
+      this.enterCb = function () {
+        el.style.display = 'block'
+      }
+      this.leaveCb = function () {
+        el.style.display = 'none'
+      }
+      this.init(el)
+    }
+
+    autoCssTransition(name) {
+      return {
+        enterClass: `${name}-enter`, // start-class
+        enterToClass: `${name}-enter-to`, // toClass
+        enterActiveClass: `${name}-enter-active`, //动画完成删除
+        leaveClass: `${name}-leave`,
+        leaveToClass: `${name}-leave-to`,
+        leaveActiveClass: `${name}-leave-active`
+      }
+    }
+
+    addTransitionClass(el, cls) {
+      el.classList.add(cls)
+    }
+
+    removeTransitionClass(el, cls) {
+      el.classList.remove(cls)
+    }
+
+    init(el) {
+      if (!this.show) {
+        el.style.display = 'none'
+      }
+
+      let {
+        enterToClass,
+        enterActiveClass,
+        leaveToClass,
+        leaveActiveClass
+      } = this.x
+
+      let cb = () =&gt; {
+        if (this.show) {
+          this.removeTransitionClass(el, enterToClass)
+          this.removeTransitionClass(el, enterActiveClass)
+
+        } else {
+          this.removeTransitionClass(el, leaveToClass)
+          this.removeTransitionClass(el, leaveActiveClass)
+          this.leaveCb()
+        }
+      }
+//     监听CSS过渡执行完成
+      el.addEventListener('transitionend', cb)
+//      监听css动画动画执行完成
+      el.addEventListener('animationend', cb)
+    }
+
+    enter() {
+      this.show = true
+      this.enterCb()
+      this.addTransitionClass(this.el, this.x.enterClass)
+      this.addTransitionClass(this.el, this.x.enterActiveClass)
+      // 下一帧
+      nextFrame(() =&gt; {
+        this.removeTransitionClass(this.el, this.x.enterClass)
+        this.addTransitionClass(this.el, this.x.enterToClass)
+      })
+    }
+
+    leave() {
+      this.show = false
+      this.addTransitionClass(this.el, this.x.leaveClass)
+      this.addTransitionClass(this.el, this.x.leaveActiveClass)
+   // 下一帧
+      nextFrame(() =&gt; {
+        this.removeTransitionClass(this.el, this.x.leaveClass)
+        this.addTransitionClass(this.el, this.x.leaveToClass)
+      })
+    }
+
+    toggle() {
+      if (!this.show) {
+        this.enter()
+      } else {
+        this.leave()
+      }
+    }
+  }
+</code></pre></div><h2 id="简单使用"><a href="#简单使用" class="header-anchor">#</a> 简单使用</h2> <div class="language- extra-class"><pre class="language-text"><code>// css
+ .slide-top-enter,
+    .slide-top-leave-to {
+      transform: translateY(-100%);
+    }
+
+    .slide-top-enter-active,
+    .slide-top-leave-active {
+      transition: all 0.3s ease;
+    }
+// js:
+ let instance = new Transition(box, 'slide-top')
+  btn.addEventListener('click', () =&gt; {
+    instance.toggle()
+  })
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/blog/front/vue/one.html">
+        vue-angle-picker
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.7319010a.js" defer></script><script src="/blog/assets/js/2.53613de2.js" defer></script><script src="/blog/assets/js/8.6a14cb95.js" defer></script>
+  </body>
+</html>

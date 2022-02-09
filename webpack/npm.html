@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webpack | 发布一个npm包 | Merry 前端总结</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="merrylmr 前端">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.bbe4b17c.css" as="style"><link rel="preload" href="/blog/assets/js/app.7319010a.js" as="script"><link rel="preload" href="/blog/assets/js/2.53613de2.js" as="script"><link rel="preload" href="/blog/assets/js/46.a961c03d.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.07c25309.js"><link rel="prefetch" href="/blog/assets/js/11.e50fe6f6.js"><link rel="prefetch" href="/blog/assets/js/12.a0c4610c.js"><link rel="prefetch" href="/blog/assets/js/13.b93b815d.js"><link rel="prefetch" href="/blog/assets/js/14.3ac60de8.js"><link rel="prefetch" href="/blog/assets/js/15.97240846.js"><link rel="prefetch" href="/blog/assets/js/16.54cb0224.js"><link rel="prefetch" href="/blog/assets/js/17.4adec6b3.js"><link rel="prefetch" href="/blog/assets/js/18.8423de59.js"><link rel="prefetch" href="/blog/assets/js/19.a24d8b10.js"><link rel="prefetch" href="/blog/assets/js/20.889e2680.js"><link rel="prefetch" href="/blog/assets/js/21.f5b823a1.js"><link rel="prefetch" href="/blog/assets/js/22.0908c706.js"><link rel="prefetch" href="/blog/assets/js/23.a8a42e95.js"><link rel="prefetch" href="/blog/assets/js/24.78b53375.js"><link rel="prefetch" href="/blog/assets/js/25.56504168.js"><link rel="prefetch" href="/blog/assets/js/26.e42e21cc.js"><link rel="prefetch" href="/blog/assets/js/27.da04f3d7.js"><link rel="prefetch" href="/blog/assets/js/28.dc1f10ab.js"><link rel="prefetch" href="/blog/assets/js/29.29825fc8.js"><link rel="prefetch" href="/blog/assets/js/3.cdf698d7.js"><link rel="prefetch" href="/blog/assets/js/30.3db7ee9a.js"><link rel="prefetch" href="/blog/assets/js/31.08805b0c.js"><link rel="prefetch" href="/blog/assets/js/32.15815cbf.js"><link rel="prefetch" href="/blog/assets/js/33.e226ab53.js"><link rel="prefetch" href="/blog/assets/js/34.638c599a.js"><link rel="prefetch" href="/blog/assets/js/35.d91c3384.js"><link rel="prefetch" href="/blog/assets/js/36.efd98a90.js"><link rel="prefetch" href="/blog/assets/js/37.645cbc2b.js"><link rel="prefetch" href="/blog/assets/js/38.8f851e35.js"><link rel="prefetch" href="/blog/assets/js/39.1a091e42.js"><link rel="prefetch" href="/blog/assets/js/4.41a26db9.js"><link rel="prefetch" href="/blog/assets/js/40.c2f1412e.js"><link rel="prefetch" href="/blog/assets/js/41.f14da1ee.js"><link rel="prefetch" href="/blog/assets/js/42.1db2aed8.js"><link rel="prefetch" href="/blog/assets/js/43.1479d117.js"><link rel="prefetch" href="/blog/assets/js/44.48c377a0.js"><link rel="prefetch" href="/blog/assets/js/45.01304b16.js"><link rel="prefetch" href="/blog/assets/js/47.82c5bc6c.js"><link rel="prefetch" href="/blog/assets/js/48.2a90b2a5.js"><link rel="prefetch" href="/blog/assets/js/49.7e0d30c6.js"><link rel="prefetch" href="/blog/assets/js/5.67a396bf.js"><link rel="prefetch" href="/blog/assets/js/50.2155cd04.js"><link rel="prefetch" href="/blog/assets/js/51.1b4ca8f8.js"><link rel="prefetch" href="/blog/assets/js/6.60ce5f27.js"><link rel="prefetch" href="/blog/assets/js/7.bfa9c86b.js"><link rel="prefetch" href="/blog/assets/js/8.6a14cb95.js"><link rel="prefetch" href="/blog/assets/js/9.c82a29d5.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.bbe4b17c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Merry 前端总结</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/front/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/plugins/" class="nav-link">
+  插件
+</a></li><li class="dropdown-item"><!----> <a href="/blog/webpack/" class="nav-link router-link-active">
+  打包
+</a></li><li class="dropdown-item"><!----> <a href="/blog/http/" class="nav-link">
+  http
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/canvas/" class="nav-link">
+  canvas-svg
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/react/" class="nav-link">
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/blog/regExp/frequence.html" class="nav-link">
+  正则表达式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="服务端" class="dropdown-title"><span class="title">服务端</span> <span class="arrow down"></span></button> <button type="button" aria-label="服务端" class="mobile-dropdown-title"><span class="title">服务端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/server/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/blog/server/docker/" class="nav-link">
+  docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="总结" class="dropdown-title"><span class="title">总结</span> <span class="arrow down"></span></button> <button type="button" aria-label="总结" class="mobile-dropdown-title"><span class="title">总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/webpack/summary/product/" class="nav-link">
+  产品
+</a></li><li class="dropdown-item"><!----> <a href="/blog/webpack/summary/booknote/" class="nav-link">
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blog/webpack/summary/work/" class="nav-link">
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/merrylmr" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/front/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/plugins/" class="nav-link">
+  插件
+</a></li><li class="dropdown-item"><!----> <a href="/blog/webpack/" class="nav-link router-link-active">
+  打包
+</a></li><li class="dropdown-item"><!----> <a href="/blog/http/" class="nav-link">
+  http
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/canvas/" class="nav-link">
+  canvas-svg
+</a></li><li class="dropdown-item"><!----> <a href="/blog/front/react/" class="nav-link">
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/blog/regExp/frequence.html" class="nav-link">
+  正则表达式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="服务端" class="dropdown-title"><span class="title">服务端</span> <span class="arrow down"></span></button> <button type="button" aria-label="服务端" class="mobile-dropdown-title"><span class="title">服务端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/server/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/blog/server/docker/" class="nav-link">
+  docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="总结" class="dropdown-title"><span class="title">总结</span> <span class="arrow down"></span></button> <button type="button" aria-label="总结" class="mobile-dropdown-title"><span class="title">总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/webpack/summary/product/" class="nav-link">
+  产品
+</a></li><li class="dropdown-item"><!----> <a href="/blog/webpack/summary/booknote/" class="nav-link">
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blog/webpack/summary/work/" class="nav-link">
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/merrylmr" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/webpack/" aria-current="page" class="sidebar-link">动态设置publicPath</a></li><li><a href="/blog/webpack/one.html" class="sidebar-link">项目升级到vue-cli3</a></li><li><a href="/blog/webpack/two.html" class="sidebar-link">webpack 打包原理</a></li><li><a href="/blog/webpack/source.html" class="sidebar-link">webpack学习资料整理</a></li><li><a href="/blog/webpack/npm.html" aria-current="page" class="active sidebar-link">webpack | 发布一个npm包</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/webpack/npm.html#版本" class="sidebar-link">版本</a></li><li class="sidebar-sub-header"><a href="/blog/webpack/npm.html#流程" class="sidebar-link">流程</a></li><li class="sidebar-sub-header"><a href="/blog/webpack/npm.html#浏览器兼容" class="sidebar-link">浏览器兼容</a></li><li class="sidebar-sub-header"><a href="/blog/webpack/npm.html#压缩" class="sidebar-link">压缩</a></li><li class="sidebar-sub-header"><a href="/blog/webpack/npm.html#问题记录" class="sidebar-link">问题记录</a></li><li class="sidebar-sub-header"><a href="/blog/webpack/npm.html#参考文档" class="sidebar-link">参考文档</a></li></ul></li><li><a href="/blog/webpack/npmVue.html" class="sidebar-link">npm发布Vue组件包</a></li><li><a href="/blog/webpack/mulPage.html" class="sidebar-link">Vue多页面应用配置</a></li><li><a href="/blog/webpack/babel.html" class="sidebar-link">Babel</a></li><li><a href="/blog/webpack/optimization.html" class="sidebar-link">VueCLI3打包优化--抽离依赖包</a></li><li><a href="/blog/webpack/es6.html" class="sidebar-link">AMD CMD CommonJS ES6</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="webpack-发布一个npm包"><a href="#webpack-发布一个npm包" class="header-anchor">#</a> webpack | 发布一个npm包</h1> <h2 id="版本"><a href="#版本" class="header-anchor">#</a> 版本</h2> <p>webpack5</p> <h2 id="流程"><a href="#流程" class="header-anchor">#</a> 流程</h2> <ul><li>安装<code>webpack</code>,<code>webpack-cli</code></li></ul> <div class="language- extra-class"><pre class="language-text"><code>npm install webpack webpack-cli -D
+</code></pre></div><ul><li>项目根目录下新建<code>webpack.config.js</code></li></ul> <div class="language- extra-class"><pre class="language-text"><code>const {CleanWebpackPlugin} = require(&quot;clean-webpack-plugin&quot;);
+module.exports = {
+    entry: {
+        index: './index.js',
+    },
+    output: {
+        path: __dirname + '/dist',
+        filename: '[name].js',
+        chunkFilename: &quot;[name].js&quot;,
+        // 这将在所有模块定义下暴露你的库, 允许它与 CommonJS、AMD 和作为全局变量工作
+        libraryTarget: 'umd'
+    },
+    plugins: [new CleanWebpackPlugin({})],
+    watchOptions: {
+        ignored: /node_modules/,
+    },
+}
+</code></pre></div><h2 id="浏览器兼容"><a href="#浏览器兼容" class="header-anchor">#</a> 浏览器兼容</h2> <p>如何让浏览器支持一些<code>es6</code>等语法或者新的API,没错，需要使用<code>babel-loader</code>,</p> <p>什么是<code>babel</code></p> <blockquote><p>Babel 是一个 JavaScript compiler
+Babel 是一个工具链，主要用于在当前和旧的浏览器或环境中，将 ECMAScript 2015+ 代码转换为 JavaScript 向后兼容版本的代码。以下是 Babel 可以做的主要事情：</p> <ul><li>转换语法</li> <li>Polyfill 目标环境中缺少的功能（通过如 <a href="https://github.com/zloirock/core-js" target="_blank" rel="noopener noreferrer">core-js<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 的第三方 <code>polyfill</code>）</li> <li>源代码转换(codemods)</li></ul></blockquote> <p><strong>babel-loader+@babel/polyfill</strong></p> <ul><li>全部引入 <code>@babel/polyfill</code></li></ul> <div class="language- extra-class"><pre class="language-text"><code>  entry: {
+        index: ['@babel/polyfill', './index.js']
+    },
+</code></pre></div><p>不建议全部加载，这个包非常大；如下图打包之后：
+<img src="https://upload-images.jianshu.io/upload_images/11899053-3853f80eac291694.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p> <ul><li>按使用的引入
+设置<code>useBuiltIns:usage</code></li></ul> <blockquote><p>Since <code>@babel/polyfill</code> was deprecated in 7.4.0, we recommend directly adding <code>core-js</code> and setting the version via the <a href="https://babel.docschina.org/docs/en/babel-preset-env/#corejs" target="_blank" rel="noopener noreferrer"><code>corejs</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> option.</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>{
+                        presets: [['@babel/preset-env',
+                            {
+                                &quot;targets&quot;: {
+                                    &quot;chrome&quot;: &quot;58&quot;,
+                                    &quot;ie&quot;: &quot;11&quot;
+                                },
+                                useBuiltIns: 'usage',
+                                //  必须配置
+                                corejs: {version: &quot;3&quot;, proposals: true}
+                            }
+                        ]],
+                        plugins: ['@babel/plugin-transform-runtime']
+                    }
+</code></pre></div><p>相同的项目，打包之后，如下图所示：
+<img src="https://upload-images.jianshu.io/upload_images/11899053-a21d2ddb94b126e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p> <h2 id="压缩"><a href="#压缩" class="header-anchor">#</a> 压缩</h2> <p>https://webpack.docschina.org/plugins/terser-webpack-plugin/#uglify-js</p> <ul><li>安装</li></ul> <div class="language- extra-class"><pre class="language-text"><code>npm install terser-webpack-plugin --save-dev
+</code></pre></div><h2 id="问题记录"><a href="#问题记录" class="header-anchor">#</a> 问题记录</h2> <ul><li>webpack5 打包之后还有箭头函数问题
+将<code>target</code>选项设置为<code>['web','es5']</code></li></ul> <p>https://webpack.docschina.org/configuration/target/</p> <h2 id="参考文档"><a href="#参考文档" class="header-anchor">#</a> 参考文档</h2> <p><a href="https://github.com/zloirock/core-js/issues/329" target="_blank" rel="noopener noreferrer">Implement NodeList.prototype.forEach<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://www.it1352.com/1962975.html" target="_blank" rel="noopener noreferrer">包含babel polyfill，但forEach在NodeLists上的IE11中仍然不起作用(babel polyfill being included, but forEach still doesn't work in IE11 on NodeLists)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://babel.docschina.org/docs/en/babel-preset-env/" target="_blank" rel="noopener noreferrer">babel官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/webpack/source.html" class="prev">
+        webpack学习资料整理
+      </a></span> <span class="next"><a href="/blog/webpack/npmVue.html">
+        npm发布Vue组件包
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.7319010a.js" defer></script><script src="/blog/assets/js/2.53613de2.js" defer></script><script src="/blog/assets/js/46.a961c03d.js" defer></script>
+  </body>
+</html>
