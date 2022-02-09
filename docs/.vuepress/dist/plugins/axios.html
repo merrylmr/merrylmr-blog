@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>axios源码分析 | Merry 前端总结</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="merrylmr 前端">
+    
+    <link rel="preload" href="/assets/css/0.styles.c8e23b86.css" as="style"><link rel="preload" href="/assets/js/app.f3d1662e.js" as="script"><link rel="preload" href="/assets/js/2.53613de2.js" as="script"><link rel="preload" href="/assets/js/20.889e2680.js" as="script"><link rel="prefetch" href="/assets/js/10.cd709f03.js"><link rel="prefetch" href="/assets/js/11.c15d9c9a.js"><link rel="prefetch" href="/assets/js/12.29d5ec07.js"><link rel="prefetch" href="/assets/js/13.a5f660e5.js"><link rel="prefetch" href="/assets/js/14.d791c34b.js"><link rel="prefetch" href="/assets/js/15.a0e87f6a.js"><link rel="prefetch" href="/assets/js/16.54cb0224.js"><link rel="prefetch" href="/assets/js/17.4adec6b3.js"><link rel="prefetch" href="/assets/js/18.fe6e0529.js"><link rel="prefetch" href="/assets/js/19.a21cea18.js"><link rel="prefetch" href="/assets/js/21.68f8eefb.js"><link rel="prefetch" href="/assets/js/22.1d1fe394.js"><link rel="prefetch" href="/assets/js/23.bd470a12.js"><link rel="prefetch" href="/assets/js/24.78b53375.js"><link rel="prefetch" href="/assets/js/25.56504168.js"><link rel="prefetch" href="/assets/js/26.e42e21cc.js"><link rel="prefetch" href="/assets/js/27.da04f3d7.js"><link rel="prefetch" href="/assets/js/28.dc1f10ab.js"><link rel="prefetch" href="/assets/js/29.29825fc8.js"><link rel="prefetch" href="/assets/js/3.cdf698d7.js"><link rel="prefetch" href="/assets/js/30.3db7ee9a.js"><link rel="prefetch" href="/assets/js/31.08805b0c.js"><link rel="prefetch" href="/assets/js/32.15815cbf.js"><link rel="prefetch" href="/assets/js/33.2d7bf99e.js"><link rel="prefetch" href="/assets/js/34.182b9c6f.js"><link rel="prefetch" href="/assets/js/35.1ed9f480.js"><link rel="prefetch" href="/assets/js/36.f900fb28.js"><link rel="prefetch" href="/assets/js/37.645cbc2b.js"><link rel="prefetch" href="/assets/js/38.ed71f395.js"><link rel="prefetch" href="/assets/js/39.9280c379.js"><link rel="prefetch" href="/assets/js/4.41a26db9.js"><link rel="prefetch" href="/assets/js/40.fb0f9ed0.js"><link rel="prefetch" href="/assets/js/41.6e3ec888.js"><link rel="prefetch" href="/assets/js/42.ba8a723f.js"><link rel="prefetch" href="/assets/js/43.c5cab81a.js"><link rel="prefetch" href="/assets/js/44.5cd083de.js"><link rel="prefetch" href="/assets/js/45.f92cffcf.js"><link rel="prefetch" href="/assets/js/46.edf7afb0.js"><link rel="prefetch" href="/assets/js/47.5a29e810.js"><link rel="prefetch" href="/assets/js/48.2a90b2a5.js"><link rel="prefetch" href="/assets/js/49.e5171b90.js"><link rel="prefetch" href="/assets/js/5.67a396bf.js"><link rel="prefetch" href="/assets/js/50.e07449bc.js"><link rel="prefetch" href="/assets/js/51.c754263a.js"><link rel="prefetch" href="/assets/js/6.60ce5f27.js"><link rel="prefetch" href="/assets/js/7.bfa9c86b.js"><link rel="prefetch" href="/assets/js/8.6a14cb95.js"><link rel="prefetch" href="/assets/js/9.c82a29d5.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c8e23b86.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Merry 前端总结</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/plugins/" class="nav-link router-link-active">
+  插件
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/" class="nav-link">
+  打包
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  http
+</a></li><li class="dropdown-item"><!----> <a href="/front/canvas/" class="nav-link">
+  canvas-svg
+</a></li><li class="dropdown-item"><!----> <a href="/front/react/" class="nav-link">
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/regExp/frequence.html" class="nav-link">
+  正则表达式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="服务端" class="dropdown-title"><span class="title">服务端</span> <span class="arrow down"></span></button> <button type="button" aria-label="服务端" class="mobile-dropdown-title"><span class="title">服务端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/server/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/server/docker/" class="nav-link">
+  docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="总结" class="dropdown-title"><span class="title">总结</span> <span class="arrow down"></span></button> <button type="button" aria-label="总结" class="mobile-dropdown-title"><span class="title">总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/plugins/summary/product/" class="nav-link">
+  产品
+</a></li><li class="dropdown-item"><!----> <a href="/plugins/summary/booknote/" class="nav-link">
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/plugins/summary/work/" class="nav-link">
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/merrylmr" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/plugins/" class="nav-link router-link-active">
+  插件
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/" class="nav-link">
+  打包
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  http
+</a></li><li class="dropdown-item"><!----> <a href="/front/canvas/" class="nav-link">
+  canvas-svg
+</a></li><li class="dropdown-item"><!----> <a href="/front/react/" class="nav-link">
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/regExp/frequence.html" class="nav-link">
+  正则表达式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="服务端" class="dropdown-title"><span class="title">服务端</span> <span class="arrow down"></span></button> <button type="button" aria-label="服务端" class="mobile-dropdown-title"><span class="title">服务端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/server/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/server/docker/" class="nav-link">
+  docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="总结" class="dropdown-title"><span class="title">总结</span> <span class="arrow down"></span></button> <button type="button" aria-label="总结" class="mobile-dropdown-title"><span class="title">总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/plugins/summary/product/" class="nav-link">
+  产品
+</a></li><li class="dropdown-item"><!----> <a href="/plugins/summary/booknote/" class="nav-link">
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/plugins/summary/work/" class="nav-link">
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/merrylmr" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/plugins/" aria-current="page" class="sidebar-link">插件列表</a></li><li><a href="/plugins/calendar.html" class="sidebar-link">vue 手机端日历组件</a></li><li><a href="/plugins/scrollAnchor.html" class="sidebar-link">scroll-anchor</a></li><li><a href="/plugins/svg.html" class="sidebar-link">svg图片转svg标签</a></li><li><a href="/plugins/crop.html" class="sidebar-link">图片裁剪组件</a></li><li><a href="/plugins/baiduMp.html" class="sidebar-link">百度地图使用总结</a></li><li><a href="/plugins/tinymce.html" class="sidebar-link">tinymce-vue 使用总结</a></li><li><a href="/plugins/wow.html" class="sidebar-link">wow.js为啥滚动动画未执行</a></li><li><a href="/plugins/fullpage.html" class="sidebar-link">vue-fullpage-ssr</a></li><li><a href="/plugins/axios.html" aria-current="page" class="active sidebar-link">axios源码分析</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/plugins/axios.html#目录结构" class="sidebar-link">目录结构</a></li><li class="sidebar-sub-header"><a href="/plugins/axios.html#源码分析" class="sidebar-link">源码分析</a></li><li class="sidebar-sub-header"><a href="/plugins/axios.html#核心代码-axios-js" class="sidebar-link">核心代码（Axios.js）</a></li><li class="sidebar-sub-header"><a href="/plugins/axios.html#ajax" class="sidebar-link">AJAX</a></li></ul></li><li><a href="/plugins/debug.html" class="sidebar-link">debug工具</a></li><li><a href="/plugins/fabric.html" class="sidebar-link">fabric.js</a></li><li><a href="/plugins/geoJSON.html" class="sidebar-link">地图数据调研</a></li><li><a href="/plugins/imgPress.html" class="sidebar-link">图片压缩</a></li><li><a href="/plugins/mescroll.html" class="sidebar-link">mescroll</a></li><li><a href="/plugins/navmenu.html" class="sidebar-link">开发一个NavMenu导航菜单</a></li><li><a href="/plugins/prerenderSpa.html" class="sidebar-link">prerender-spa-plugin</a></li><li><a href="/plugins/tabWow.html" class="sidebar-link">解决切换tab ,wow动画不生效问题</a></li><li><a href="/plugins/uniApp.html" class="sidebar-link">uni-app</a></li><li><a href="/plugins/three.html" class="sidebar-link">Threejs</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="axios源码分析"><a href="#axios源码分析" class="header-anchor">#</a> axios源码分析</h1> <p>axios既支持浏览器，也可以在node项目中使用</p> <ul><li>从浏览器中创建 <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener noreferrer">XMLHttpRequests<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>从 node.js 创建 <a href="http://nodejs.org/api/http.html" target="_blank" rel="noopener noreferrer">http<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 请求</li></ul> <h2 id="目录结构"><a href="#目录结构" class="header-anchor">#</a> 目录结构</h2> <div class="language- extra-class"><pre class="language-text"><code>|--dist 
+|--lib
+| |-- adapters
+| | |-- http.js
+| | |-- xhr.js
+| |-- cancel
+| | |-- cancel.js
+| | |-- cancelToken.js
+| | |-- isCancel.js
+| |-- core
+| | |-- Axios.js
+| | |-- createError.js
+| | |-- dispatchRequest.js
+| | |-- enhanceError.js
+| | |-- interceptorManager.js
+| | |-- settle.js  // response处理
+| | |-- transformData.js // transformRequest/transformResponse的处理
+| |-- helpers
+| | |-- bind.js 
+| | |-- buildURL.js  // params参数的处理
+| | |-- combineRULs.js
+| | |-- cookies.js
+| | |-- deprecatedMethod.js
+| | |-- isAbsoluteURL.js
+| | |-- isURLSameOrigin.js
+| | |-- normailizeHeaderName.js
+| | |-- parseHeaders.js
+| | |-- spread.js
+| |-- axios.js
+|-- default.js
+|-- utils.js
+|-- index.js
+|-- index.d.ts
+</code></pre></div><h2 id="源码分析"><a href="#源码分析" class="header-anchor">#</a> 源码分析</h2> <ul><li>url地址拼接处理：<code>helpers/buildURL.js</code></li> <li>头部处理
+配置会以一个优先顺序进行合并。这个顺序是：在 lib/defaults.js 找到的库的默认值，然后是实例的 defaults 属性，最后是请求的 config 参数。后者将优先于前者</li></ul> <p>index.js--&gt; axios.js --&gt; Axios.js</p> <p>// axios.js(入口文件)
+//-&gt;Axios.js(defaults.js)
+//-&gt;dispatchRequest.js(chain[]，interceptors.request放在组件面)
+//-&gt;</p> <h2 id="核心代码-axios-js"><a href="#核心代码-axios-js" class="header-anchor">#</a> 核心代码（Axios.js）</h2> <div class="language- extra-class"><pre class="language-text"><code>Axios.prototype.request = function request(config) {
+  /*eslint no-param-reassign:0*/
+  // Allow for axios('example/url'[, config]) a la fetch API
+  if (typeof config === 'string') {
+    config = utils.merge({
+      url: arguments[0]
+    }, arguments[1]);
+  }
+
+  config = utils.merge(defaults, {method: 'get'}, this.defaults, config);
+  config.method = config.method.toLowerCase();
+
+  // Hook up interceptors middleware
+  var chain = [dispatchRequest, undefined];
+  var promise = Promise.resolve(config);
+
+  this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
+    chain.unshift(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
+    chain.push(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  while (chain.length) {
+    promise = promise.then(chain.shift(), chain.shift());
+  }
+
+  return promise;
+};
+
+</code></pre></div><p>dispatchRequest.js</p> <div class="language- extra-class"><pre class="language-text"><code>module.exports = function dispatchRequest(config) {
+  throwIfCancellationRequested(config);
+
+  // Support baseURL config
+  if (config.baseURL &amp;&amp; !isAbsoluteURL(config.url)) {
+    config.url = combineURLs(config.baseURL, config.url);
+  }
+
+  // Ensure headers exist
+  config.headers = config.headers || {};
+
+  // Transform request data
+  config.data = transformData(
+    config.data,
+    config.headers,
+    config.transformRequest
+  );
+
+  // Flatten headers
+  config.headers = utils.merge(
+    config.headers.common || {},
+    config.headers[config.method] || {},
+    config.headers || {}
+  );
+
+  utils.forEach(
+    ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
+    function cleanHeaderConfig(method) {
+      delete config.headers[method];
+    }
+  );
+
+ // 执行ajax请求
+  var adapter = config.adapter || defaults.adapter;
+
+  return adapter(config).then(function onAdapterResolution(response) {
+    throwIfCancellationRequested(config);
+
+    // Transform response data
+    response.data = transformData(
+      response.data,
+      response.headers,
+      config.transformResponse
+    );
+
+    return response;
+  }, function onAdapterRejection(reason) {
+    if (!isCancel(reason)) {
+      throwIfCancellationRequested(config);
+
+      // Transform response data
+      if (reason &amp;&amp; reason.response) {
+        reason.response.data = transformData(
+          reason.response.data,
+          reason.response.headers,
+          config.transformResponse
+        );
+      }
+    }
+
+    return Promise.reject(reason);
+  });
+};
+
+</code></pre></div><h2 id="ajax"><a href="#ajax" class="header-anchor">#</a> AJAX</h2> <p>header的Content-Type(setRequestHeader)</p> <ul><li><p>application/x-www-form-urlencoded format</p></li> <li><p>application/json</p></li> <li><p>URLSearchParams
+https://developer.mozilla.org/zh-CN/docs/Web/API/URLSearchParams</p></li> <li><p>Accept</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 默认：
+// 设置不同方法请求的内容类型
+// 在default.js里面会对Data的类型进行判断，设置相应的Content-type
+// xhr.js-&gt;adapter-&gt;put、post等：如果isFormData 会删除 Content-type,Let the browser set it
+// dispatchRequest里面会在post里面的方法，拍平到headers下面，然后删除对用的方法下的头部设置项
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
+axios.defaults.headers.get['x-x'] = 'get-only'
+axios.defaults.headers.put['x-x-x'] = 'put-only'
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// request配置
+axios.interceptors.request.use((config) =&gt; {
+  // get请求：发送的数据data=&quot;undefined&quot;,header数据的content-type会被删除，
+  // 如果是post、put请求：以下设置则会生效。
+  // content-type设置发送请求的数据类型，不设置default.js会对发送的data类型进行判断，然后添加对应的类型
+  // 这个应该是在default.js执行之后，在执行
+  config.headers['content-type'] = 'application/json';
+  return config;
+});
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/plugins/fullpage.html" class="prev">
+        vue-fullpage-ssr
+      </a></span> <span class="next"><a href="/plugins/debug.html">
+        debug工具
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f3d1662e.js" defer></script><script src="/assets/js/2.53613de2.js" defer></script><script src="/assets/js/20.889e2680.js" defer></script>
+  </body>
+</html>
