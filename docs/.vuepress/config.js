@@ -1,6 +1,6 @@
 module.exports = {
-    title: 'Merry 前端总结',
-    description: 'merrylmr 前端',
+    title: 'Merry',
+    description: '前端、生活、有趣的产品分享',
     configureWebpack: {},
     themeConfig: {
         nav: [

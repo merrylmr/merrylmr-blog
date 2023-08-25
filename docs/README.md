@@ -1,9 +1,9 @@
 ---
 home: true
-heroImage: /logo.jpeg
-heroText: 前端学习总结
-actionText: 快速上手 →
-actionLink: /front/vue/
+heroImage: /tool.png
+heroText: 妙妙工具箱
+actionText: 抠图小工具 →
+actionLink: https://mouseke.merrylmr.top/
 features:
 - title: 前端系列
   details: 日常开发的总结：vue、插件等
