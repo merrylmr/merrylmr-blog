@@ -31,7 +31,7 @@ module.exports = {
                 items: [
                     {text: '产品', link: 'summary/product/'},
                     {text: '读书笔记', link: 'summary/booknote/'},
-                    {text: '工作总结', link: 'summary/work/'},
+                    {text: '生活', link: '/life/'},
                 ]
             },
             {text: 'Github', link: 'https://github.com/merrylmr'},
