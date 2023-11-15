@@ -30,7 +30,7 @@ module.exports = {
                 link: '/summary/',
                 items: [
                     {text: '产品', link: 'summary/product/'},
-                    {text: '读书笔记', link: 'summary/booknote/'},
+                    {text: '读书笔记', link: '/notes/'},
                     {text: '生活', link: '/life/'},
                 ]
             },
