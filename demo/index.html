@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>防抖和节流</title>
+</head>
+<body>
+<div>
+    <input type="text">
+</div>
+<script type="module">
+    import {throttle} from './index.js'
+
+    window.addEventListener('load', function () {
+        const inputDom = document.querySelector('input')
+        const fn = throttle((a) => {
+            console.log('input throttle', a)
+        }, 3000, {leading: false, trailing: true})
+
+        function inputHandle() {
+            console.log('input')
+            fn('11111')
+        }
+
+        inputDom.addEventListener('input', inputHandle)
+    })
+
+</script>
+</body>
+</html>
