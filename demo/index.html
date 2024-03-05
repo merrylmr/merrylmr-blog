@@ -15,7 +15,7 @@
         const inputDom = document.querySelector('input')
         const fn = throttle((a) => {
             console.log('input throttle', a)
-        }, 3000, {leading: false, trailing: true})
+        }, 3000)
 
         function inputHandle() {
             console.log('input')
